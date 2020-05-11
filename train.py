@@ -30,11 +30,11 @@ if __name__ == '__main__':
     B_word=42
     if args.toy:
         USE_SMALL=True
-        GPU=True
+        GPU=torch.cuda.is_available()
         BATCH_SIZE=15
     else:
         USE_SMALL=False
-        GPU=True
+        GPU=torch.cuda.is_available()
         BATCH_SIZE=64
     TRAIN_ENTRY=(True, True, True)  # (AGG, SEL, COND)
     TRAIN_AGG, TRAIN_SEL, TRAIN_COND = TRAIN_ENTRY
